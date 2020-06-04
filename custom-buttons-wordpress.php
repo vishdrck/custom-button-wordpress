@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Custom Buttons Wordpress
  * Plugin URI:        #
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Custom Button for Wordpress - support for custom buttons. Use [vs-btn] shortcode.
  * Version:           1.0.0
  * Author:            Vishwajith Weerasinghe
  * Author URI:        #
