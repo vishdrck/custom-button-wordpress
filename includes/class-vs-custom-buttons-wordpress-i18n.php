@@ -24,7 +24,7 @@
  * @subpackage Custom_Buttons_Wordpress/includes
  * @author     Vishwajith Weerasinghe <vish.drck@gmail.com>
  */
-class Custom_Buttons_Wordpress_i18n {
+class VS_Custom_Buttons_Wordpress_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Custom_Buttons_Wordpress_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'custom-buttons-wordpress',
+			'vs_custom-buttons-wordpress',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

@@ -20,7 +20,7 @@
  * @subpackage Custom_Buttons_Wordpress/includes
  * @author     Vishwajith Weerasinghe <vish.drck@gmail.com>
  */
-class Custom_Buttons_Wordpress_Deactivator {
+class VS_Custom_Buttons_Wordpress_Deactivator {
 
 	/**
 	 * Short Description. (use period)

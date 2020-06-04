@@ -21,7 +21,7 @@
  * @subpackage Custom_Buttons_Wordpress/includes
  * @author     Vishwajith Weerasinghe <vish.drck@gmail.com>
  */
-class Custom_Buttons_Wordpress_Loader {
+class VS_Custom_Buttons_Wordpress_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

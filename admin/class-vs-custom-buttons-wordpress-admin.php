@@ -20,7 +20,7 @@
  * @subpackage Custom_Buttons_Wordpress/admin
  * @author     Vishwajith Weerasinghe <vish.drck@gmail.com>
  */
-class Custom_Buttons_Wordpress_Admin {
+class VS_Custom_Buttons_Wordpress_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -73,7 +73,7 @@ class Custom_Buttons_Wordpress_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/custom-buttons-wordpress-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/vs-custom-buttons-wordpress-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,7 +96,7 @@ class Custom_Buttons_Wordpress_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/custom-buttons-wordpress-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vs-custom-buttons-wordpress-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 

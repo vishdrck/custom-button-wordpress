@@ -27,7 +27,7 @@
  * @subpackage Custom_Buttons_Wordpress/includes
  * @author     Vishwajith Weerasinghe <vish.drck@gmail.com>
  */
-class Custom_Buttons_Wordpress {
+class VS_Custom_Buttons_Wordpress {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Custom_Buttons_Wordpress {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Custom_Buttons_Wordpress_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      VS_Custom_Buttons_Wordpress_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -67,12 +67,12 @@ class Custom_Buttons_Wordpress {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'CUSTOM_BUTTONS_WORDPRESS_VERSION' ) ) {
-			$this->version = CUSTOM_BUTTONS_WORDPRESS_VERSION;
+		if ( defined( 'VS_CUSTOM_BUTTONS_WORDPRESS_VERSION' ) ) {
+			$this->version = VS_CUSTOM_BUTTONS_WORDPRESS_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'custom-buttons-wordpress';
+		$this->plugin_name = 'vs_custom-buttons-wordpress';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -103,26 +103,26 @@ class Custom_Buttons_Wordpress {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-custom-buttons-wordpress-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-vs-custom-buttons-wordpress-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-custom-buttons-wordpress-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-vs-custom-buttons-wordpress-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-custom-buttons-wordpress-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-vs-custom-buttons-wordpress-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-custom-buttons-wordpress-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-vs-custom-buttons-wordpress-public.php';
 
-		$this->loader = new Custom_Buttons_Wordpress_Loader();
+		$this->loader = new VS_Custom_Buttons_Wordpress_Loader();
 
 	}
 
@@ -137,7 +137,7 @@ class Custom_Buttons_Wordpress {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Custom_Buttons_Wordpress_i18n();
+		$plugin_i18n = new VS_Custom_Buttons_Wordpress_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,7 +152,7 @@ class Custom_Buttons_Wordpress {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Custom_Buttons_Wordpress_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new VS_Custom_Buttons_Wordpress_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -168,7 +168,7 @@ class Custom_Buttons_Wordpress {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Custom_Buttons_Wordpress_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new VS_Custom_Buttons_Wordpress_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -199,7 +199,7 @@ class Custom_Buttons_Wordpress {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Custom_Buttons_Wordpress_Loader    Orchestrates the hooks of the plugin.
+	 * @return    VS_Custom_Buttons_Wordpress_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;
