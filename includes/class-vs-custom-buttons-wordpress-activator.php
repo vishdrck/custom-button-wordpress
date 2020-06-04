@@ -41,14 +41,15 @@ class VS_Custom_Buttons_Wordpress_Activator
 
 		$sql = "CREATE TABLE $table_name (
 			id mediumint(9) NOT NULL AUTO_INCREMENT,
-			default_link varchar(255) DEFAULT '#' NOT NULL
-			default_style varcahr(255) DEFAULT 'primary' NOT NULL,
-			UNIQUE KEY id(id)
+			default_link varchar(255) DEFAULT '#' NOT NULL,
+			default_style varchar(255) DEFAULT 'primary' NOT NULL,
+			UNIQUE KEY id (id)
 		) $charset_collate;";
 
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		dbDelta($sql);
-		add_option('vs_custom_buttons_db_version', $plugin_db_version);
+		// add_option('vs_custom_buttons_db_version', $plugin_db_version);
+		trigger_error(ob_get_contents(), E_USER_ERROR);
 	}
 
 	/**
